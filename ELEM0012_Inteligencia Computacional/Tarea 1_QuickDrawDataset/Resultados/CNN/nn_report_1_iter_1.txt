@@ -1,0 +1,11 @@
+                 precision    recall  f1-score   support
+
+hot air balloon       0.68      0.98      0.81   1312080
+         hammer       0.95      0.74      0.83   1023880
+      megaphone       0.64      0.87      0.74   1240140
+          snake       0.00      0.00      0.00    797225
+      microwave       0.95      0.97      0.96   1361690
+
+       accuracy                           0.77   5735015
+      macro avg       0.65      0.71      0.67   5735015
+   weighted avg       0.69      0.77      0.72   5735015
