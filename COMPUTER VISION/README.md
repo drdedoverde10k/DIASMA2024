@@ -1,13 +1,13 @@
-# DIASMA2024
-Repositorio de Archivos Público.
+# Chilean Coin Detection and Classification using CV-based Strategies
 
-Encargos y Proyectos.
+Coin identification and recognition systems can significantly improve the automation and efficiency of systems such as vending machines, public telephones, and coin counting machines. However, coin recognition presents a challenge in the fields of computer vision and machine learning due to varying rotations, scales, lighting conditions, and distinct surface patterns.
 
-Doctorado en Informática Aplicada a la Salud y Medioambiente UTEM
+This project focuses on designing an efficient computer vision algorithm that is robust and invariant to rotation, translation, and scale—tailored specifically for the recognition of Chilean peso coins.
 
-git remote add origin https://github.com/drdedoverde10k/DIASMA2024.git
-git branch -M main
-git push -u origin main
+## Project Objectives
+The main objective of this project is to develop a system capable of detecting and classifying Chilean coins in images without using convolutional neural networks (CNNs). The proposed solution must be able to:
+	•	Segment image regions containing coins.
+	•	Identify and determine the denomination of each visible coin (as long as its features are not severely occluded).
 
 ### Project Organization
 
