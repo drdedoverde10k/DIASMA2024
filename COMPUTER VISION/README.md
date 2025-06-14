@@ -9,9 +9,16 @@ The main objective of this project is to develop a system capable of detecting a
 - Segment image regions containing coins.
 - Identify and determine the denomination of each visible coin (as long as its features are not severely occluded).
 
-![Image]([ruta_o_URL_de_la_imagen](https://raw.githubusercontent.com/drdedoverde10k/DIASMA2024/refs/heads/main/COMPUTER%20VISION/dataset/11.png))
+<p align="center">
+  <img src="dataset/11.png" alt="Chilean Coin Detection" width="600">
+</p>
 
-https://raw.githubusercontent.com/drdedoverde10k/DIASMA2024/refs/heads/main/COMPUTER%20VISION/dataset/11.png
+<p align="center">
+  <em>
+    Matching of Chilean peso coins.
+  </em>
+</p>
+
 
 ### Project Organization
 
