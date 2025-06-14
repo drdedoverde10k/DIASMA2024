@@ -6,8 +6,8 @@ This project focuses on designing an efficient computer vision algorithm that is
 
 ## Project Objectives
 The main objective of this project is to develop a system capable of detecting and classifying Chilean coins in images without using convolutional neural networks (CNNs). The proposed solution must be able to:
-	•	Segment image regions containing coins.
-	•	Identify and determine the denomination of each visible coin (as long as its features are not severely occluded).
+	- Segment image regions containing coins.
+	- Identify and determine the denomination of each visible coin (as long as its features are not severely occluded).
 
 ### Project Organization
 
