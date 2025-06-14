@@ -13,11 +13,10 @@ git push -u origin main
 
 ```
 .
-├── data/               : Contains all coins images
-├── src/                : Contains report images
-├── CMakeLists.txt      : CMake instructions list
-├── coins.cpp           : Main routine
-├── coins_toolbox.cpp   : Coin class (/w Classification Code)
-├── coins_toolbox.hpp   : Coin class Header file
-└── README.md           : Project Report
+├── dataset                                     : Contains all coins images
+├── video                                       : Contains a video example
+├── CMakeLists.txt                              : CMake instructions list
+├── cam_calibration.py                          : Calibration for webcam script
+├── opencv-coin-detection-and-counting.ipynb    : Test notebook
+└── README.md                                   : Project Report
 ```
