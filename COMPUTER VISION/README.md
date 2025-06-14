@@ -11,6 +11,8 @@ The main objective of this project is to develop a system capable of detecting a
 
 ![Image]([ruta_o_URL_de_la_imagen](https://raw.githubusercontent.com/drdedoverde10k/DIASMA2024/refs/heads/main/COMPUTER%20VISION/dataset/11.png))
 
+https://raw.githubusercontent.com/drdedoverde10k/DIASMA2024/refs/heads/main/COMPUTER%20VISION/dataset/11.png
+
 ### Project Organization
 
 ```
