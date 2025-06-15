@@ -31,3 +31,14 @@ The main objective of this project is to develop a system capable of detecting a
 ├── opencv-coin-detection-and-counting.ipynb    : Test notebook
 └── README.md                                   : Project Report
 ```
+## Data Description
+
+
+
+## Coin Detection
+## Coin Classification
+## Color Classification
+
+# Final Results
+
+## Coin Detection
