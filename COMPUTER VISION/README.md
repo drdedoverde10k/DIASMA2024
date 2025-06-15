@@ -88,4 +88,10 @@ cd "DIASMA2024/COMPUTER VISION"
 python -m venv .venv
 source .venv/bin/activate
 ```
+## Launch App
+```bash
+python chilean_coin_detection.py
 
+# Press 'q' to close/exit
+
+```
