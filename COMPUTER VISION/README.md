@@ -13,7 +13,7 @@ The proposed solution must be able to:
 - Identify and determine the denomination of each visible coin (as long as its features are not severely occluded).
 
 <p align="center">
-  <img src="dataset/11.png" alt="Chilean Coin Detection" width="600">
+  <img src="video/vid1.gif" alt="Chilean Coin Detection" width="600">
 </p>
 
 <p align="center">
