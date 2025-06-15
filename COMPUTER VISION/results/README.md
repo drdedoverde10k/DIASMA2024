@@ -1,6 +1,6 @@
 ## Results
-Table of classification results. Listed as
-[number correct]/[total].
+Table of classification results. 
+Listed as [prediction]/[real].
 
 | Images    | $1 / $5   | $10   | $50   | $100   | $100 (old)   | $500   | ?? (Not Coin)   | Total   |
 |:----------|:----------|:------|:------|:-------|:-----------------|:-------|:----------------|:--------|
