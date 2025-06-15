@@ -33,6 +33,8 @@ The proposed solution must be able to:
 
 ## Coin Detection Results
 
+ratio =  predicted/real
+
 ### Table 1 – Overall Counting Summary
 
 | Denomination      | Predicted | Ground-truth | Error | Ratio |
