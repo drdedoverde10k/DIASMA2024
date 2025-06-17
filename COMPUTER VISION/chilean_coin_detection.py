@@ -3,7 +3,6 @@ import cv2 as cv
 import matplotlib.pyplot as plt
 import os
 
-# ------------------------------------------------------------------
 # Ordena cuatro puntos de un cuadrilátero en el orden:
 # [top‑left, top‑right, bottom‑right, bottom‑left]
 def order_points(pts: np.ndarray) -> np.ndarray:
@@ -17,10 +16,7 @@ def order_points(pts: np.ndarray) -> np.ndarray:
     rect[1] = pts[np.argmin(diff)]
     rect[3] = pts[np.argmax(diff)]
     return rect
-# ------------------------------------------------------------------
 
-
-# ------------------------------------------------------------------
 # Clasificación avanzada de monedas chilenas usando diámetro, circularidad y tono (hue)
 def clasificar_por_caracteristicas(diametro_mm: float,
                                    circularity: float,
@@ -46,8 +42,8 @@ def clasificar_por_caracteristicas(diametro_mm: float,
             return "$500"
     
     return "?"
-# ------------------------------------------------------------------
 
+# Capture video (1280x720)
 cap = cv.VideoCapture(0)
 cap.set(cv.CAP_PROP_FRAME_WIDTH, 1280)
 cap.set(cv.CAP_PROP_FRAME_HEIGHT, 720)
@@ -67,7 +63,7 @@ while True:
     # Our operations on the frame come here
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
 
-        # Aplicar desenfoque para reducir ruido
+    # Aplicar desenfoque para reducir ruido
     blurred = cv.GaussianBlur(gray, (5, 5), 0)
     
     # Aplicar detección de bordes
@@ -77,8 +73,8 @@ while True:
     hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
 
     # Rango de color para tonos metálicos (grisáceos)
-    lower_metall = np.array([10, 30, 100])      # H: cualquier, S: baja, V: media
-    upper_metall = np.array([40, 255, 255])  # H: cualquier, S: baja, V: alta
+    lower_metall = np.array([10, 30, 100])   # H: cualquiera, S: baja, V: media
+    upper_metall = np.array([40, 255, 255])  # H: cualquiera, S: baja, V: alta
 
     # Crear máscara
     mask = cv.inRange(hsv, lower_metall, upper_metall)
@@ -90,12 +86,11 @@ while True:
     # Dibujar los círculos si se encontraron, filtrando por radio y circularidad
     output = frame.copy()
 
-    
+    # Desomentar para variar colores de cámara 
     frame_hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
     #lower_blue = np.array([90,  50,  50])
     #upper_blue = np.array([130,255,255])
     #creditcard_mask = cv.inRange(frame_hsv, lower_blue, upper_blue)
-
 
     creditcard_mask = cv.inRange(frame_hsv, np.array([0, 0, 0]), np.array([180, 255, 80]))
     contours, _ = cv.findContours(creditcard_mask, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
@@ -103,7 +98,7 @@ while True:
     DEFAULT_PIX_TO_MM = 0.32  # valor aproximado para 1280x720
     pix_to_mm = DEFAULT_PIX_TO_MM
     for cnt in contours:
-        # --- usar rectángulo rotado para mayor precisión ---
+        # usar rectángulo rotado para mayor precisión
         rect = cv.minAreaRect(cnt)
         box = cv.boxPoints(rect).astype("float32")
         ordered = order_points(box)
@@ -139,7 +134,7 @@ while True:
                        cv.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
             break
 
-    # --- factores de escala ---------------------------------------------
+    # factores de escala 
     if pix_to_mm is not None:
         px_per_mm   = 1.0 / pix_to_mm           # píxeles que ocupa 1 mm
         # diámetros de monedas chilenas más pequeñas y más grandes
@@ -219,7 +214,7 @@ while True:
                     circularity = 4 * np.pi * (area / (perimeter * perimeter))
                     break
 
-                # --- filtro por agujeros internos (botones) -------------
+                # filtro por agujeros internos (botones)
                 mask_roi = np.zeros(gray.shape, dtype="uint8")
                 cv.circle(mask_roi, (x, y), int(r * 0.8), 255, -1)
 
@@ -240,7 +235,7 @@ while True:
 
                 # Si se detecta al menos un círculo interno, lo descartamos como moneda
                 if inner_circles is not None:
-                    # cuenta como elemento desconocido
+                    # cuenta de elemento desconocido
                     conteo_monedas["?"] += 1
                     cv.putText(output, "??", (x - 20, y),
                                cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
